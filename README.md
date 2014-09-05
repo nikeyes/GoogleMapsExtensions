@@ -1,7 +1,12 @@
 GoogleMapsExtensions
 ====================
 
-HtmlMarkers con Rotación: Permite crear Marker con código HTML sobre GoogleMaps.
+HtmlMarkers con Rotación: 
+            Permite crear Marker con código HTML sobre GoogleMaps.
+            
+Hay un ejemplo de uso en: https://github.com/nikeyes/GoogleMapsExtensions/blob/master/GoogleMapsExtension/DemoHtmlMarkers.html
+Solo hay que añadir la clave de Google Maps donde pone PUT_YOUR_GOOGLE_MAPS_KEY
+
 Ejemplo de uso:
 
 Inicialización:
