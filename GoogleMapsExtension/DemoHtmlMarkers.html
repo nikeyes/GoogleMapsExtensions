@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyABhMN8uECrAYt-urVOFlCWGisEMh3cSjM&sensor=false"></script>
+        <script type="text/javascript" src="scripts/GoogleMapsExtension.1.0.0.min.js"></script>
+        <script>
+            
+
+            var habitMap,
+                mapsGateway;
+            function Initialize()
+            {
+                var mapDivElement = document.getElementById('GoogleMapsDiv');
+                var center = new google.maps.LatLng(71.11677038645317 , -8.19580078125);
+
+                var mapOptions = {
+                    zoom: 8,
+                    maxZoom: 17,
+                    minZoom: 2,
+                    center: center,
+                    panControl: true,
+                    zoomControl: true,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    streetViewControl: false,
+                    overviewMapControl: false,
+                    draggable: true,
+                    draggableCursor: 'default'
+                };
+
+                mapsGateway = new GoogleMapsExtensions.GoogleMapsGateway(mapDivElement, mapOptions);
+            }
+
+            function CreateHtmlMarkers(idTextValueHtml)
+            {
+                var listOfMarkers = [];
+                listOfMarkers.push({
+                    Id: "htmlMarker1",
+                    Html: "<div style='border: 1px solid purple'>This is an HTML Marker: <br /> <img src='images/markers/purple_MarkerH.png' /></div>",
+                    Lat: 71.11677038645317 , 
+                    Lon: -8.19580078125,
+                    Rot: 0,//Math.random() * 360,
+                    AdjustPixelsX: 0,
+                    AdjustPixelsY: 0
+                })
+                var htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(mapsGateway, listOfMarkers);
+                htmlMarkerManager.ShowHtmlMarkers();
+            }
+
+            function CreateHtmlMarkersWithRotation()
+            {
+                var listOfMarkers = [];
+                listOfMarkers.push({
+                    Id: "htmlMarker2",
+                    Html: "<div style='border: 1px solid orange'>This is a Rotate HTML Marker: <br /> <img src='images/markers/orange_MarkerH.png' /></div>",
+                    Lat: 71.11677038645317 , 
+                    Lon: -8.19580078125,
+                    Rot: Math.random() * 360,
+                AdjustPixelsX: 0,
+                AdjustPixelsY: 0
+            })
+                var htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(mapsGateway, listOfMarkers);
+            htmlMarkerManager.ShowHtmlMarkers();
+            }
+        </script>
+	</head>
+	<body onload="Initialize();">
+
+        <div style="float: left; width: 66%;">
+            <div id="wrapper">
+                 <div id="GoogleMapsDiv" class="mapSection boxRadius" style="height:590px;width:875px;"> </div>
+            </div>
+            <div class="clearFix"></div>
+
+            <div id="debugMode" style="display:none;">
+            </div>
+        </div>
+        <div style="float: left; width: 20%;">
+            Click To Create Marker: <img src='images/markers/purple_MarkerH.png' onclick="CreateHtmlMarkers();" />
+            <br />
+            Every Click Create a Rotated Marker: <img src='images/markers/orange_MarkerH.png' onclick="CreateHtmlMarkersWithRotation();" />
+            
+        </div>
+    </body>
+</html>
