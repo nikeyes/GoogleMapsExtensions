@@ -5,6 +5,8 @@ HtmlMarkers con Rotación: Permite crear Marker con código HTML sobre GoogleMap
 Ejemplo de uso:
 
 Inicialización:
+            
+            
             var mapsGateway;
             function Initialize()
             {
@@ -32,4 +34,23 @@ Inicialización:
 
                 //Creamos un nuevo Mapa.
                 mapsGateway = new GoogleMapsExtensions.GoogleMapsGateway(mapDivElement, mapOptions);
+            }
+
+/*Creación de un HTML Marker */
+            function CreateHtmlMarkers()
+            {
+                //Creamos la lista de HTMLMarkers que queremos visualizar sobre el mapa.
+                var listOfMarkers = [];
+                //Añadimos a la lista tantos HTML Markers como queramos.
+                listOfMarkers.push({
+                    Id: "htmlMarker1", //Identificador para acceso através del DOM
+                    Html: "<div style='border: 1px solid purple'>This is an HTML Marker: <br /> <img src='images/markers/purple_MarkerH.png' /></div>",
+                    Lat: 71.11677038645317 , 
+                    Lon: -8.19580078125,
+                    Rot: 0,
+                    AdjustPixelsX: 0, //Ajuste en pixels para centrar el HTML
+                    AdjustPixelsY: 0 //Ajuste en pixels para centrar el HTML
+                })
+                var htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(mapsGateway, listOfMarkers);
+                htmlMarkerManager.ShowHtmlMarkers();
             }
