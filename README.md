@@ -48,6 +48,7 @@ Creación de un HTML Marker:
             {
                 //Creamos la lista de HTMLMarkers que queremos visualizar sobre el mapa.
                 var listOfMarkers = [];
+                
                 //Añadimos a la lista tantos HTML Markers como queramos.
                 listOfMarkers.push({
                     Id: "htmlMarker1", //Identificador para acceso através del DOM
@@ -57,7 +58,11 @@ Creación de un HTML Marker:
                     Rot: 0,
                     AdjustPixelsX: 0, //Ajuste en pixels para centrar el HTML
                     AdjustPixelsY: 0 //Ajuste en pixels para centrar el HTML
-                })
+                });
+                
+                /Creamos el Gestor de HTML Markers
                 var htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(mapsGateway, listOfMarkers);
+               
+                //Mostramos los HTML Markers
                 htmlMarkerManager.ShowHtmlMarkers();
             }
