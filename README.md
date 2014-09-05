@@ -36,7 +36,9 @@ Inicialización:
                 mapsGateway = new GoogleMapsExtensions.GoogleMapsGateway(mapDivElement, mapOptions);
             }
 
-/*Creación de un HTML Marker */
+Creación de un HTML Marker:
+
+
             function CreateHtmlMarkers()
             {
                 //Creamos la lista de HTMLMarkers que queremos visualizar sobre el mapa.
