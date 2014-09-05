@@ -56,6 +56,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="DemoHtmlMarkers.html" />
+    <Content Include="images\markers\green_MarkerH.png" />
     <Content Include="images\markers\orange_MarkerH.png" />
     <Content Include="images\markers\purple_MarkerH.png" />
     <Content Include="scripts\src\DebugModeService.js" />
