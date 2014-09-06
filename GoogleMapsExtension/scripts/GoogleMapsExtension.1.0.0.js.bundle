@@ -12,7 +12,6 @@
   <files>
     <file>/scripts/src/Namespaces.js</file>
     <file>/scripts/src/GeographicalPrimitives.js</file>
-    <file>/scripts/src/JsonHtmlMarkersMasterData.js</file>
     <file>/scripts/src/GoogleMapsGateway.js</file>
     <file>/scripts/src/GoogleMapsHtmlMarker.js</file>
     <file>/scripts/src/GoogleMapsOverlayBase.js</file>

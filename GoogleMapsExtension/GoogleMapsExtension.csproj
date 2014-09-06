@@ -72,7 +72,6 @@
     <Content Include="scripts\src\GoogleMapsHtmlMarkerManager.js" />
     <Content Include="scripts\src\GoogleMapsGateway.js" />
     <Content Include="scripts\src\Namespaces.js" />
-    <Content Include="scripts\src\JsonHtmlMarkersMasterData.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
