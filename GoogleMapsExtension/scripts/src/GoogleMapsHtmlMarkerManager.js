@@ -52,7 +52,11 @@
 
     GoogleMapsHtmlMarkerManager.prototype = new ns.GoogleMapsOverlayBase();
 
-    GoogleMapsHtmlMarkerManager.prototype.constructor = GoogleMapsHtmlMarkerManager;   
+    GoogleMapsHtmlMarkerManager.prototype.constructor = GoogleMapsHtmlMarkerManager;
+
+    GoogleMapsHtmlMarkerManager.prototype.RemoveMarkers = function () {
+        _SetMap.call(this, null);
+    };
 
     GoogleMapsHtmlMarkerManager.prototype.onAdd = function () {
         this._htmlMarkerLayer = document.createElement('div');
