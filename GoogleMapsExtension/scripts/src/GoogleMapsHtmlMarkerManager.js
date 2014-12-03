@@ -6,15 +6,15 @@
      *  Overlay over GoogleMaps that covers all map.
      *  This class draw the labels over this overlay
     */
-    var GoogleMapsHtmlMarkerManager = function (googleMapsGateway, listOfJsonHtmlMarkers) {
+    var GoogleMapsHtmlMarkerManager = function (map, listOfJsonHtmlMarkers) {
         ns.GoogleMapsOverlayBase.call(this);
-        this._mapsGateway = googleMapsGateway;
         this._listOfJsonHtmlMarkers = listOfJsonHtmlMarkers;
 
         this._htmlMarkersArray = [];
         this._htmlMarkerLayer;
-        this._map;
-        _SetMap.call(this, googleMapsGateway.GetMap());
+        this._map = map;
+        _SetMap.call(this, map);
+        _ShowHtmlMarkers.call(this);
     };
 
     var _RemoveHtmlMarkersLayer = function () {
@@ -29,30 +29,30 @@
         }
         this._map = map;
         this.setMap(map);
-    }
+    };
 
-    GoogleMapsHtmlMarkerManager.prototype = new ns.GoogleMapsOverlayBase();
-
-    GoogleMapsHtmlMarkerManager.prototype.constructor = GoogleMapsHtmlMarkerManager;   
-
-    GoogleMapsHtmlMarkerManager.prototype.ShowHtmlMarkers = function () {
+    var _ShowHtmlMarkers = function () {
         var index,
-            listOfJsonHtmlMarkersLenght,
-            jsonHtmlMarker,
-            htmlMarker;
-        
+             listOfJsonHtmlMarkersLenght,
+             jsonHtmlMarker,
+             htmlMarker;
+
         listOfJsonHtmlMarkersLenght = this._listOfJsonHtmlMarkers.length;
 
         for (index = 0; index < listOfJsonHtmlMarkersLenght ; index++) {
             jsonHtmlMarker = this._listOfJsonHtmlMarkers[index];
 
-            htmlMarker = new GoogleMapsExtensions.GoogleMapsHtmlMarker(jsonHtmlMarker);
+            htmlMarker = new ns.GoogleMapsHtmlMarker(jsonHtmlMarker);
 
             htmlMarker.SetVisible(true);
 
             this._htmlMarkersArray.push(htmlMarker);
         }
     };
+
+    GoogleMapsHtmlMarkerManager.prototype = new ns.GoogleMapsOverlayBase();
+
+    GoogleMapsHtmlMarkerManager.prototype.constructor = GoogleMapsHtmlMarkerManager;   
 
     GoogleMapsHtmlMarkerManager.prototype.onAdd = function () {
         this._htmlMarkerLayer = document.createElement('div');

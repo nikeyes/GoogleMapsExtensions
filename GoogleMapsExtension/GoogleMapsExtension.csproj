@@ -59,18 +59,15 @@
     <Content Include="images\markers\green_MarkerH.png" />
     <Content Include="images\markers\orange_MarkerH.png" />
     <Content Include="images\markers\purple_MarkerH.png" />
-    <Content Include="scripts\src\DebugModeService.js" />
-    <Content Include="scripts\src\GeographicalPrimitives.js" />
-    <Content Include="scripts\GoogleMapsExtension.1.0.0.js">
-      <DependentUpon>GoogleMapsExtension.1.0.0.js.bundle</DependentUpon>
+    <Content Include="scripts\GoogleMapsExtension.1.1.1.js">
+      <DependentUpon>GoogleMapsExtension.1.1.1.js.bundle</DependentUpon>
     </Content>
-    <Content Include="scripts\GoogleMapsExtension.1.0.0.min.js">
-      <DependentUpon>GoogleMapsExtension.1.0.0.js</DependentUpon>
+    <Content Include="scripts\GoogleMapsExtension.1.1.1.min.js">
+      <DependentUpon>GoogleMapsExtension.1.1.1.js</DependentUpon>
     </Content>
     <Content Include="scripts\src\GoogleMapsOverlayBase.js" />
     <Content Include="scripts\src\GoogleMapsHtmlMarker.js" />
     <Content Include="scripts\src\GoogleMapsHtmlMarkerManager.js" />
-    <Content Include="scripts\src\GoogleMapsGateway.js" />
     <Content Include="scripts\src\Namespaces.js" />
   </ItemGroup>
   <ItemGroup>
@@ -81,18 +78,17 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scripts\GoogleMapsExtension.1.0.0.js.bundle" />
+    <Content Include="scripts\GoogleMapsExtension.1.1.1.js.bundle" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scripts\GoogleMapsExtension.1.0.0.min.js.map">
-      <DependentUpon>GoogleMapsExtension.1.0.0.min.js</DependentUpon>
+    <Content Include="scripts\GoogleMapsExtension.1.1.1.min.js.map">
+      <DependentUpon>GoogleMapsExtension.1.1.1.min.js</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="BeforeBuild">
-    <Exec Command="&quot;$(SolutionDir)ExecutePrebuildTasks.cmd&quot; &quot;$(SolutionDir)&quot; &quot;$(ProjectDir)&quot; 1&gt; &quot;$(ProjectDir)ExecutePrebuildTasks.log&quot; 2&gt; &quot;$(ProjectDir)ExecutePrebuildTasks.error&quot;" />
   </Target>
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />

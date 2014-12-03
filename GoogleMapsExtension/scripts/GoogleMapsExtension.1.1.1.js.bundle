@@ -11,11 +11,8 @@
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
     <file>/scripts/src/Namespaces.js</file>
-    <file>/scripts/src/GeographicalPrimitives.js</file>
-    <file>/scripts/src/GoogleMapsGateway.js</file>
     <file>/scripts/src/GoogleMapsHtmlMarker.js</file>
     <file>/scripts/src/GoogleMapsOverlayBase.js</file>
     <file>/scripts/src/GoogleMapsHtmlMarkerManager.js</file>
-    <file>/scripts/src/DebugModeService.js</file>
   </files>
 </bundle>
