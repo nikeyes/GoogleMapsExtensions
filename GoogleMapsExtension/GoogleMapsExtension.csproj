@@ -59,6 +59,7 @@
     <Content Include="images\markers\green_MarkerH.png" />
     <Content Include="images\markers\orange_MarkerH.png" />
     <Content Include="images\markers\purple_MarkerH.png" />
+    <Content Include="images\markers\x.png" />
     <Content Include="scripts\GoogleMapsExtension.1.1.1.js">
       <DependentUpon>GoogleMapsExtension.1.1.1.js.bundle</DependentUpon>
     </Content>
