@@ -62,3 +62,11 @@ Creación de un HTML Marker:
                 /Creamos el Gestor de HTML Markers
                 var htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
             }
+            
+Borrar los HTML Markers del mapa:
+
+
+            function CleanHtmlMarkers()
+            {
+               htmlMarkerManager.RemoveMarkers();
+            }
