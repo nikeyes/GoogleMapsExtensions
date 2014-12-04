@@ -3,16 +3,18 @@
 	<head>
 		<title></title>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script type="text/javascript" src="javascripts/GoogleMapsExtension.1.1.1.min.js"></script>
+        <script type="text/javascript" src="scripts/GoogleMapsExtension.1.1.1.min.js"></script>
         <style type="text/css">
             html {
                 height: 100%;
             }
+
             body {
                 height: 100%;
                 margin: 0;
                 padding: 0;
             }
+
             .fullScreen {
                 height: 100%;
                 width: 100%;
@@ -21,12 +23,15 @@
 
         <script>
             var map;
+            var htmlMarkerManager;
             function Initialize()
             {
                 //Cogemos el Div que va a contener el Mapa de GoogleMaps.
                 var mapDivElement = document.getElementById('GoogleMapsDiv');
+
                 //Creamos el punto donde centrar el mapa.
                 var center = new google.maps.LatLng(71.11677038645317 , -8.19580078125);
+
                 //Creamos las opciones iniciales del mapa.
                 var mapOptions = {
                     zoom: 8,
@@ -42,13 +47,16 @@
                     draggable: true,
                     draggableCursor: 'default'
                 };
+
                 //Creamos un nuevo Mapa.
                 map = new google.maps.Map(mapDivElement, mapOptions)
             }
+
             function CreateHtmlMarkers()
             {
                 //Creamos la lista de HTMLMarkers que queremos visualizar sobre el mapa.
                 var listOfMarkers = [];
+
                 //Añadimos a la lista tantos HTML Markers como queramos.
                 listOfMarkers.push({
                     Id: "htmlMarker1", //Identificador para acceso através del DOM
@@ -59,9 +67,17 @@
                     AdjustPixelsX: 0, //Ajuste en pixels para centrar el HTML
                     AdjustPixelsY: 0 //Ajuste en pixels para centrar el HTML
                 });
+
+
                 //Creamos el Gestor de HTML Markers
-                var htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
+                htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
             }
+
+            function RemoveHtmlMarker()
+            {
+                htmlMarkerManager.RemoveMarkers();
+            }
+
             function CreateHtmlMarkersWithRotation()
             {
                 var listOfMarkers = [];
@@ -74,12 +90,14 @@
                     AdjustPixelsX: 0,
                     AdjustPixelsY: 0
                 });
-                var htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
+
+                var htmlMarkerManagerOrange = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
             }
+
             function CreateHtmlMarkersWithAdjustPixels() {
                 var listOfMarkers = [];
                 listOfMarkers.push({
-                    Id: "htmlMarker2",
+                    Id: "htmlMarker4",
                     Html: "<div style='border: 5px solid green; font-weight:bold; border-radius: 5px;'>This is a HTML Marker With Pixel X Adjust <br /> <img src='images/markers/green_MarkerH.png' /></div>",
                     Lat: 71.11677038645317,
                     Lon: -8.19580078125,
@@ -87,7 +105,9 @@
                     AdjustPixelsX: -100, // <---------
                     AdjustPixelsY: 0
                 });
-                var htmlMarkerManager = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
+
+                var htmlMarkerManagerGreen = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
+
             }
         </script>
 	</head>
@@ -96,11 +116,18 @@
             <div id="GoogleMapsDiv" style ="display:table-cell; width:70%;"></div>
  
             <div style="display: table-cell; vertical-align:top; width:30%;">
-                <b>Click para crear un Html Marker:</b> <img src='images/markers/purple_MarkerH.png' onclick="CreateHtmlMarkers();" />
-                <br />
-                <b>Cada Click Crea un Marker Rotado:</b> <img src='images/markers/orange_MarkerH.png' onclick="CreateHtmlMarkersWithRotation();" />
-                <br />
-                <b>Click Crea un Marker Desplazado:</b> <img src='images/markers/green_MarkerH.png' onclick="CreateHtmlMarkersWithAdjustPixels();" />
+                <p>
+                    <b>Click para Crear un Html Marker:</b> <img src='images/markers/purple_MarkerH.png' onclick="CreateHtmlMarkers();" />
+                </p>
+                <p>
+                    <b>Click para Borrar un Html Marker:</b> <img src='images/markers/x.png' onclick="RemoveHtmlMarker();" />
+                </p>
+                <p>
+                    <b>Cada Click Crea un Marker Rotado:</b> <img src='images/markers/orange_MarkerH.png' onclick="CreateHtmlMarkersWithRotation();" />
+                </p>
+                <p>
+                    <b>Click Crea un Marker Desplazado:</b> <img src='images/markers/green_MarkerH.png' onclick="CreateHtmlMarkersWithAdjustPixels();" />
+                </p>
             </div>
         </div>
 		<script>
