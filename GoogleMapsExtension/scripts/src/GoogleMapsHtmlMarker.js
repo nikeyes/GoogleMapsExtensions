@@ -8,6 +8,7 @@
         this._lng = jsonHtmlMarker.Lon;
         this._fnOnMouseOver = jsonHtmlMarker.fnOnMouseOver;
         this._fnOnMouseOut = jsonHtmlMarker.fnOnMouseOut;
+        this._fnOnClick = jsonHtmlMarker.fnOnClick;
 
         
         this._adjustPixelsX;
@@ -107,6 +108,10 @@
 
              if (ns.isFunction(this._fnOnMouseOut)) {
                  divParent.onmouseout = this._fnOnMouseOut;
+             }
+
+             if (ns.isFunction(this._fnOnClick)) {
+                 divParent.onclick = this._fnOnClick;
              }
 
              return divParent;

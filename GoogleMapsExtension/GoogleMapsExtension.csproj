@@ -66,6 +66,12 @@
     <Content Include="scripts\GoogleMapsExtension.1.3.0.min.js">
       <DependentUpon>GoogleMapsExtension.1.3.0.js</DependentUpon>
     </Content>
+    <Content Include="scripts\GoogleMapsExtension.1.3.1.js">
+      <DependentUpon>GoogleMapsExtension.1.3.1.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="scripts\GoogleMapsExtension.1.3.1.min.js">
+      <DependentUpon>GoogleMapsExtension.1.3.1.js</DependentUpon>
+    </Content>
     <Content Include="scripts\src\GoogleMapsOverlayBase.js" />
     <Content Include="scripts\src\GoogleMapsHtmlMarker.js" />
     <Content Include="scripts\src\GoogleMapsHtmlMarkerManager.js" />
@@ -84,6 +90,14 @@
   <ItemGroup>
     <Content Include="scripts\GoogleMapsExtension.1.3.0.min.js.map">
       <DependentUpon>GoogleMapsExtension.1.3.0.min.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\GoogleMapsExtension.1.3.1.js.bundle" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\GoogleMapsExtension.1.3.1.min.js.map">
+      <DependentUpon>GoogleMapsExtension.1.3.1.min.js</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
