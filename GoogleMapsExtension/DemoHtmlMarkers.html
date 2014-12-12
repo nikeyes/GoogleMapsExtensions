@@ -3,7 +3,7 @@
 	<head>
 		<title></title>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script type="text/javascript" src="scripts/GoogleMapsExtension.1.1.1.min.js"></script>
+        <script type="text/javascript" src="scripts/GoogleMapsExtension.1.3.0.js"></script>
         <style type="text/css">
             html {
                 height: 100%;
@@ -98,12 +98,24 @@
                 var listOfMarkers = [];
                 listOfMarkers.push({
                     Id: "htmlMarker4",
-                    Html: "<div style='border: 5px solid green; font-weight:bold; border-radius: 5px;'>This is a HTML Marker With Pixel X Adjust <br /> <img src='images/markers/green_MarkerH.png' /></div>",
+                    Html: "<div style='border: 5px solid green; font-weight:bold; border-radius: 5px;'>This is a HTML Marker With Pixel X Adjust and MouseOver Event <br /> <img src='images/markers/green_MarkerH.png' /></div>",
                     Lat: 71.11677038645317,
                     Lon: -8.19580078125,
                     Rot: 0,
                     AdjustPixelsX: -100, // <---------
-                    AdjustPixelsY: 0
+                    AdjustPixelsY: 0,
+                    fnOnMouseOver: function () {
+                        var elem = document.getElementById('htmlMarker4');
+                        var tooltip = document.createElement("div");
+                        tooltip.setAttribute('id', 'tooltip');
+                        tooltip.innerHTML = "<span style='border: 2px solid green;position:absolute; top:-50px; left:0'>DENTRO!!!!!!!!!!!!!!!! <br /> <img src='images/markers/green_MarkerH.png' /></span>"
+                        elem.appendChild(tooltip);
+                        },
+                    fnOnMouseOut: function () {
+                        var elem = document.getElementById('htmlMarker4');
+                        var tootip = document.getElementById('tooltip');
+                        elem.removeChild(tooltip);
+                        }
                 });
 
                 var htmlMarkerManagerGreen = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
@@ -126,7 +138,7 @@
                     <b>Cada Click Crea un Marker Rotado:</b> <img src='images/markers/orange_MarkerH.png' onclick="CreateHtmlMarkersWithRotation();" />
                 </p>
                 <p>
-                    <b>Click Crea un Marker Desplazado:</b> <img src='images/markers/green_MarkerH.png' onclick="CreateHtmlMarkersWithAdjustPixels();" />
+                    <b>Click Crea un Marker Desplazado con Evento MouseOver:</b> <img src='images/markers/green_MarkerH.png' onclick="CreateHtmlMarkersWithAdjustPixels();" />
                 </p>
             </div>
         </div>

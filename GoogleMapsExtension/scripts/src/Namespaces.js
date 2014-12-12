@@ -1,8 +1,14 @@
 var GoogleMapsExtensions = {
     //Global Helper Functions 
     IsNullOrEmpty: function (element) {
-        return (element === null || element === "" || typeof element === "undefined");
+        return !element;
+    },
+
+    isFunction: function (fn) {
+        return Object.prototype.toString.call(fn) === "[object Function]";
     }
+    
+    
 };
 
 

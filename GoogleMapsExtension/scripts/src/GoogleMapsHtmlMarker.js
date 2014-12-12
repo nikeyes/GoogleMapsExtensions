@@ -6,6 +6,9 @@
         this._angle = jsonHtmlMarker.Rot;
         this._lat = jsonHtmlMarker.Lat;
         this._lng = jsonHtmlMarker.Lon;
+        this._fnOnMouseOver = jsonHtmlMarker.fnOnMouseOver;
+        this._fnOnMouseOut = jsonHtmlMarker.fnOnMouseOut;
+
         
         this._adjustPixelsX;
         this._adjustPixelsY;
@@ -95,7 +98,16 @@
 
              spanElement = document.createElement('span');
              spanElement.innerHTML = this._htmlContent;
+
              divParent.appendChild(spanElement);
+
+             if (ns.isFunction(this._fnOnMouseOver)) {
+                 divParent.onmouseover = this._fnOnMouseOver;
+             }
+
+             if (ns.isFunction(this._fnOnMouseOut)) {
+                 divParent.onmouseout = this._fnOnMouseOut;
+             }
 
              return divParent;
          },         

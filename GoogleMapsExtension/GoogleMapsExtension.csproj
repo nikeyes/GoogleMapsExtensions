@@ -60,11 +60,11 @@
     <Content Include="images\markers\orange_MarkerH.png" />
     <Content Include="images\markers\purple_MarkerH.png" />
     <Content Include="images\markers\x.png" />
-    <Content Include="scripts\GoogleMapsExtension.1.1.1.js">
-      <DependentUpon>GoogleMapsExtension.1.1.1.js.bundle</DependentUpon>
+    <Content Include="scripts\GoogleMapsExtension.1.2.js">
+      <DependentUpon>GoogleMapsExtension.1.2.1.js.bundle</DependentUpon>
     </Content>
-    <Content Include="scripts\GoogleMapsExtension.1.1.1.min.js">
-      <DependentUpon>GoogleMapsExtension.1.1.1.js</DependentUpon>
+    <Content Include="scripts\GoogleMapsExtension.1.2.min.js">
+      <DependentUpon>GoogleMapsExtension.1.2.js</DependentUpon>
     </Content>
     <Content Include="scripts\src\GoogleMapsOverlayBase.js" />
     <Content Include="scripts\src\GoogleMapsHtmlMarker.js" />
@@ -79,11 +79,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scripts\GoogleMapsExtension.1.1.1.js.bundle" />
+    <Content Include="scripts\GoogleMapsExtension.1.2.1.js.bundle" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scripts\GoogleMapsExtension.1.1.1.min.js.map">
-      <DependentUpon>GoogleMapsExtension.1.1.1.min.js</DependentUpon>
+    <Content Include="scripts\GoogleMapsExtension.1.2.min.js.map">
+      <DependentUpon>GoogleMapsExtension.1.2.min.js</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
