@@ -24,7 +24,7 @@
 
      var _GetCssRotation = function () {
         var angle = this._angle,
-            rad = angle * Math.PI * 2 / 360,
+            rad = angle * Math.PI / 180,
             cos = Math.cos(rad),
             sin = Math.sin(rad),
             cssStyle;

@@ -18,8 +18,14 @@
     };
 
     var _RemoveHtmlMarkersLayer = function () {
+        var child;
         while (this._htmlMarkerLayer.hasChildNodes()) {
-            this._htmlMarkerLayer.removeChild(this._htmlMarkerLayer.firstChild);
+            /*Detach events of the DOM Object and Delete element*/
+            child = this._htmlMarkerLayer.firstChild;
+            child.onmouseover = null;
+            child.onmouseout = null;
+            child.onclick = null;
+            this._htmlMarkerLayer.removeChild(child);
         }
     };
 

@@ -53,7 +53,7 @@ var GoogleMapsExtensions = {
 
      var _GetCssRotation = function () {
         var angle = this._angle,
-            rad = angle * Math.PI * 2 / 360,
+            rad = angle * Math.PI / 180,
             cos = Math.cos(rad),
             sin = Math.sin(rad),
             cssStyle;
@@ -223,8 +223,14 @@ var GoogleMapsExtensions = {
     };
 
     var _RemoveHtmlMarkersLayer = function () {
+        var child;
         while (this._htmlMarkerLayer.hasChildNodes()) {
-            this._htmlMarkerLayer.removeChild(this._htmlMarkerLayer.firstChild);
+            /*Detach events of the DOM Object and Delete element*/
+            child = this._htmlMarkerLayer.firstChild;
+            child.onmouseover = null;
+            child.onmouseout = null;
+            child.onclick = null;
+            this._htmlMarkerLayer.removeChild(child);
         }
     };
 
