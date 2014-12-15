@@ -96,6 +96,7 @@
 
             function CreateHtmlMarkersWithAdjustPixels() {
                 var listOfMarkers = [];
+                var valueForAlert = "onClick1";
                 listOfMarkers.push({
                     Id: "htmlMarker4",
                     Html: "<div style='border: 5px solid green; font-weight:bold; border-radius: 5px;'>This is a HTML Marker With Pixel X Adjust <p> and MouseOver, MouseOut and Click Event</p> <br /> <img src='images/markers/green_MarkerH.png' /></div>",
@@ -106,12 +107,27 @@
                     AdjustPixelsY: 0,
                     fnOnMouseOver: onMouseOverMarker,
                     fnOnMouseOut: onMouseOutMarker,
-                    fnOnClick: onClickMarker
+                    fnOnClick: onClickMarker(valueForAlert)//function (param) { return function () { onClickMarker(param); } }(i)
                 });
 
+                valueForAlert = "onClick2";
+                listOfMarkers.push({
+                    Id: "htmlMarker5",
+                    Html: "<div style='border: 5px solid green; font-weight:bold; border-radius: 5px;'>This is a HTML Marker With Pixel X Adjust <p> and MouseOver, MouseOut and Click Event</p> <br /> <img src='images/markers/green_MarkerH.png' /></div>",
+                    Lat: 71.11677038645317,
+                    Lon: -8.19580078125,
+                    Rot: 0,
+                    AdjustPixelsX: -100, // <---------
+                    AdjustPixelsY: -100,
+                    fnOnMouseOver: onMouseOverMarker,
+                    fnOnMouseOut: onMouseOutMarker,
+                    fnOnClick: onClickMarker(valueForAlert)//function (param) { return function(){onClickMarker(param);} }(i)
+                });
                 var htmlMarkerManagerGreen = new GoogleMapsExtensions.GoogleMapsHtmlMarkerManager(map, listOfMarkers);
 
             }
+
+           
 
             function onMouseOverMarker ()
             {
@@ -128,8 +144,8 @@
                 elem.removeChild(tooltip);
             }
 
-            function onClickMarker() {
-                alert("Click!");
+            function onClickMarker(param) {
+                return function () { alert(param) };
             }
 
         </script>
