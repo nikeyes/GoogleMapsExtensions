@@ -10,9 +10,9 @@
   </settings>
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
-    <file>/scripts/src/GoogleMapsHtmlMarker.js</file>
-    <file>/scripts/src/GoogleMapsHtmlMarkerManager.js</file>
-    <file>/scripts/src/GoogleMapsOverlayBase.js</file>
     <file>/scripts/src/Namespaces.js</file>
+    <file>/scripts/src/GoogleMapsHtmlMarker.js</file>
+    <file>/scripts/src/GoogleMapsOverlayBase.js</file>
+    <file>/scripts/src/GoogleMapsHtmlMarkerManager.js</file>
   </files>
 </bundle>
