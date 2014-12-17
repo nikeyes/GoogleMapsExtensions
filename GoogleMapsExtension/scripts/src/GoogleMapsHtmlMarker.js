@@ -9,6 +9,7 @@
         this._fnOnMouseOver = jsonHtmlMarker.fnOnMouseOver;
         this._fnOnMouseOut = jsonHtmlMarker.fnOnMouseOut;
         this._fnOnClick = jsonHtmlMarker.fnOnClick;
+        this._zIndex = (jsonHtmlMarker.zIndex == null) ? 0 : jsonHtmlMarker.zIndex;
 
         
         this._adjustPixelsX;
@@ -94,7 +95,9 @@
 
              divParent.style.cssText = 'left:' + screenInsertPointLabel.x + 'px; '
                                          + 'top:' + screenInsertPointLabel.y + 'px; '
+                                         + 'z-index:' + this._zIndex + ';'
                                          + _GetCssRotation.call(this);
+                                         
 
 
              spanElement = document.createElement('span');

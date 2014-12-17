@@ -1,32 +1,4 @@
-﻿///#source 1 1 /scripts/src/Namespaces.js
-/*!
- * GoogleMapsExtension JavaScript Library v1.3.0
- * https://github.com/nikeyes/GoogleMapsExtensions
- *
- * Sample
- * http://nikeyes.github.io/GoogleMapsExtensions/
- *
- * Released under the MIT license
- * https://raw.githubusercontent.com/nikeyes/GoogleMapsExtensions/master/licence.txt
- *
- * Date: 2014/12/12
- */
-var GoogleMapsExtensions = {
-    //Global Helper Functions 
-    IsNullOrEmpty: function (element) {
-        return !element;
-    },
-
-    isFunction: function (fn) {
-        return Object.prototype.toString.call(fn) === "[object Function]";
-    }
-    
-    
-};
-
-
-
-///#source 1 1 /scripts/src/GoogleMapsHtmlMarker.js
+﻿///#source 1 1 /scripts/src/GoogleMapsHtmlMarker.js
 
 (function (ns) {
     var GoogleMapsHtmlMarker = function (jsonHtmlMarker) {
@@ -38,6 +10,7 @@ var GoogleMapsExtensions = {
         this._fnOnMouseOver = jsonHtmlMarker.fnOnMouseOver;
         this._fnOnMouseOut = jsonHtmlMarker.fnOnMouseOut;
         this._fnOnClick = jsonHtmlMarker.fnOnClick;
+        this._zIndex = (jsonHtmlMarker.zIndex == null) ? 0 : jsonHtmlMarker.zIndex;
 
         
         this._adjustPixelsX;
@@ -123,7 +96,9 @@ var GoogleMapsExtensions = {
 
              divParent.style.cssText = 'left:' + screenInsertPointLabel.x + 'px; '
                                          + 'top:' + screenInsertPointLabel.y + 'px; '
+                                         + 'z-index:' + this._zIndex + ';'
                                          + _GetCssRotation.call(this);
+                                         
 
 
              spanElement = document.createElement('span');
@@ -164,44 +139,6 @@ var GoogleMapsExtensions = {
 
 
 
-///#source 1 1 /scripts/src/GoogleMapsOverlayBase.js
-(function (ns) {
-    "use strict";
-    var GoogleMapsOverlayBase = function () {
-        google.maps.OverlayView.call(this);
-    };
-
-    GoogleMapsOverlayBase.prototype = new google.maps.OverlayView();
-
-    GoogleMapsOverlayBase.prototype.constructor = GoogleMapsOverlayBase;
-
-    GoogleMapsOverlayBase.prototype.SetMap = function () {
-        throw new Error("This method must be overwritten!");
-    };
-
-    GoogleMapsOverlayBase.prototype.CreateCityLabel = function (distX, distY) {
-        throw new Error("This method must be overwritten!");
-    };
-
-    GoogleMapsOverlayBase.prototype.SetCssClass = function (cssClass) {
-        throw new Error("This method must be overwritten!");
-    };
-
-    GoogleMapsOverlayBase.prototype.onAdd = function () {
-        throw new Error("This method must be overwritten!");
-    };
-
-    GoogleMapsOverlayBase.prototype.onRemove = function () {
-        throw new Error("This method must be overwritten!");
-    };
-       
-    GoogleMapsOverlayBase.prototype.draw = function () {
-        throw new Error("This method must be overwritten!");
-    };
-
-    ns.GoogleMapsOverlayBase = GoogleMapsOverlayBase;
-
-}(window.GoogleMapsExtensions || {}));
 ///#source 1 1 /scripts/src/GoogleMapsHtmlMarkerManager.js
 (function (ns) {
     /**
@@ -320,6 +257,72 @@ var GoogleMapsExtensions = {
 
 }(window.GoogleMapsExtensions || {}));
 
+
+
+
+///#source 1 1 /scripts/src/GoogleMapsOverlayBase.js
+(function (ns) {
+    "use strict";
+    var GoogleMapsOverlayBase = function () {
+        google.maps.OverlayView.call(this);
+    };
+
+    GoogleMapsOverlayBase.prototype = new google.maps.OverlayView();
+
+    GoogleMapsOverlayBase.prototype.constructor = GoogleMapsOverlayBase;
+
+    GoogleMapsOverlayBase.prototype.SetMap = function () {
+        throw new Error("This method must be overwritten!");
+    };
+
+    GoogleMapsOverlayBase.prototype.CreateCityLabel = function (distX, distY) {
+        throw new Error("This method must be overwritten!");
+    };
+
+    GoogleMapsOverlayBase.prototype.SetCssClass = function (cssClass) {
+        throw new Error("This method must be overwritten!");
+    };
+
+    GoogleMapsOverlayBase.prototype.onAdd = function () {
+        throw new Error("This method must be overwritten!");
+    };
+
+    GoogleMapsOverlayBase.prototype.onRemove = function () {
+        throw new Error("This method must be overwritten!");
+    };
+       
+    GoogleMapsOverlayBase.prototype.draw = function () {
+        throw new Error("This method must be overwritten!");
+    };
+
+    ns.GoogleMapsOverlayBase = GoogleMapsOverlayBase;
+
+}(window.GoogleMapsExtensions || {}));
+///#source 1 1 /scripts/src/Namespaces.js
+/*!
+ * GoogleMapsExtension JavaScript Library v1.3.0
+ * https://github.com/nikeyes/GoogleMapsExtensions
+ *
+ * Sample
+ * http://nikeyes.github.io/GoogleMapsExtensions/
+ *
+ * Released under the MIT license
+ * https://raw.githubusercontent.com/nikeyes/GoogleMapsExtensions/master/licence.txt
+ *
+ * Date: 2014/12/12
+ */
+var GoogleMapsExtensions = {
+    //Global Helper Functions 
+    IsNullOrEmpty: function (element) {
+        return !element;
+    },
+
+    isFunction: function (fn) {
+        return Object.prototype.toString.call(fn) === "[object Function]";
+    }
+    
+    
+};
 
 
 
