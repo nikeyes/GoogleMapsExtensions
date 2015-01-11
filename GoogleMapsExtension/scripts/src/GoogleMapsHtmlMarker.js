@@ -12,8 +12,8 @@
         this._zIndex = (jsonHtmlMarker.zIndex === null) ? 0 : jsonHtmlMarker.zIndex;
 
         
-        this._adjustPixelsX;
-        this._adjustPixelsY;
+        this._adjustPixelsX = 0;
+        this._adjustPixelsY = 0;
 
         _SetDistanceFromInsertPoint.call(this, jsonHtmlMarker.AdjustPixelsX, jsonHtmlMarker.AdjustPixelsY);
 

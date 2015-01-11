@@ -43,8 +43,8 @@ var GoogleMapsExtensions = {
         this._zIndex = (jsonHtmlMarker.zIndex === null) ? 0 : jsonHtmlMarker.zIndex;
 
         
-        this._adjustPixelsX;
-        this._adjustPixelsY;
+        this._adjustPixelsX = 0;
+        this._adjustPixelsY = 0;
 
         _SetDistanceFromInsertPoint.call(this, jsonHtmlMarker.AdjustPixelsX, jsonHtmlMarker.AdjustPixelsY);
 
@@ -213,7 +213,7 @@ var GoogleMapsExtensions = {
         this._listOfJsonHtmlMarkers = listOfJsonHtmlMarkers;
 
         this._htmlMarkersArray = [];
-        this._htmlMarkerLayer;
+        this._htmlMarkerLayer = null;
         this._map = map;
         _SetMap.call(this, map);
         _ShowHtmlMarkers.call(this);

@@ -11,7 +11,7 @@
         this._listOfJsonHtmlMarkers = listOfJsonHtmlMarkers;
 
         this._htmlMarkersArray = [];
-        this._htmlMarkerLayer;
+        this._htmlMarkerLayer = null;
         this._map = map;
         _SetMap.call(this, map);
         _ShowHtmlMarkers.call(this);
