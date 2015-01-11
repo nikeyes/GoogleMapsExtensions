@@ -11,6 +11,8 @@
  *
  * Date: 2014/12/12
  */
+
+/* exported GoogleMapsExtensions */
 var GoogleMapsExtensions = {
     //Global Helper Functions 
     IsNullOrEmpty: function (element) {
@@ -38,7 +40,7 @@ var GoogleMapsExtensions = {
         this._fnOnMouseOver = jsonHtmlMarker.fnOnMouseOver;
         this._fnOnMouseOut = jsonHtmlMarker.fnOnMouseOut;
         this._fnOnClick = jsonHtmlMarker.fnOnClick;
-        this._zIndex = (jsonHtmlMarker.zIndex == null) ? 0 : jsonHtmlMarker.zIndex;
+        this._zIndex = (jsonHtmlMarker.zIndex === null) ? 0 : jsonHtmlMarker.zIndex;
 
         
         this._adjustPixelsX;
@@ -179,14 +181,6 @@ var GoogleMapsExtensions = {
     GoogleMapsOverlayBase.prototype.constructor = GoogleMapsOverlayBase;
 
     GoogleMapsOverlayBase.prototype.SetMap = function () {
-        throw new Error("This method must be overwritten!");
-    };
-
-    GoogleMapsOverlayBase.prototype.CreateCityLabel = function (distX, distY) {
-        throw new Error("This method must be overwritten!");
-    };
-
-    GoogleMapsOverlayBase.prototype.SetCssClass = function (cssClass) {
         throw new Error("This method must be overwritten!");
     };
 

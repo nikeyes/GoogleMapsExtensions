@@ -10,6 +10,8 @@
  *
  * Date: 2014/12/12
  */
+
+/* exported GoogleMapsExtensions */
 var GoogleMapsExtensions = {
     //Global Helper Functions 
     IsNullOrEmpty: function (element) {

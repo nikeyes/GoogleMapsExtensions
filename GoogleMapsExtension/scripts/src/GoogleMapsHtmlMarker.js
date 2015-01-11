@@ -9,7 +9,7 @@
         this._fnOnMouseOver = jsonHtmlMarker.fnOnMouseOver;
         this._fnOnMouseOut = jsonHtmlMarker.fnOnMouseOut;
         this._fnOnClick = jsonHtmlMarker.fnOnClick;
-        this._zIndex = (jsonHtmlMarker.zIndex == null) ? 0 : jsonHtmlMarker.zIndex;
+        this._zIndex = (jsonHtmlMarker.zIndex === null) ? 0 : jsonHtmlMarker.zIndex;
 
         
         this._adjustPixelsX;

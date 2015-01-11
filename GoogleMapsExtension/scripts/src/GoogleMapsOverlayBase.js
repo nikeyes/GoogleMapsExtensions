@@ -12,14 +12,6 @@
         throw new Error("This method must be overwritten!");
     };
 
-    GoogleMapsOverlayBase.prototype.CreateCityLabel = function (distX, distY) {
-        throw new Error("This method must be overwritten!");
-    };
-
-    GoogleMapsOverlayBase.prototype.SetCssClass = function (cssClass) {
-        throw new Error("This method must be overwritten!");
-    };
-
     GoogleMapsOverlayBase.prototype.onAdd = function () {
         throw new Error("This method must be overwritten!");
     };
