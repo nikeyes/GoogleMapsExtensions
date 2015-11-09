@@ -1,4 +1,4 @@
-
+/* jscs: enable */
 (function (ns) {
     var GoogleMapsHtmlMarker = function (jsonHtmlMarker) {
         this._id = jsonHtmlMarker.Id;
@@ -11,7 +11,7 @@
         this._fnOnClick = jsonHtmlMarker.fnOnClick;
         this._zIndex = (jsonHtmlMarker.zIndex === null) ? 0 : jsonHtmlMarker.zIndex;
 
-        
+
         this._adjustPixelsX = 0;
         this._adjustPixelsY = 0;
 
@@ -20,7 +20,7 @@
         this._divLabel = document.createElement("div");
         this._divLabel.id = jsonHtmlMarker.Id;
 
-        
+
     };
 
      var _GetCssRotation = function () {
@@ -74,9 +74,9 @@
          if (!ns.IsNullOrEmpty(distY)) {
              this._adjustPixelsY = distY;
          }
-         else {
+         else
              this._adjustPixelsY = 0;
-         }
+         
 
      };
 
